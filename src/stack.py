@@ -19,6 +19,15 @@ class Stack:
         self.top = None
         self.size = 0
 
+    def __str__(self):
+        all_stack = []
+        node = self.top
+        while node is not None:
+            data = node.data
+            all_stack.append(data)
+            node = node.next_node
+        return '\n'.join(all_stack)
+
     def push(self, data):
         """
         Метод для добавления элемента на вершину стека
