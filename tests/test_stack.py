@@ -27,26 +27,11 @@ class TestStack(unittest.TestCase):
         stack.pop()
         self.assertEqual(stack.size, 1)
         stack.pop()
-        # with self.assertRaises(IndexError):
-        #     stack.pop()
 
-
-
-
-
-
-
-    # def test_push(self):
-    #     stack = Stack()
-    #     # stack.push('data1')
-    #     # stack.push('data2')
-    #     # stack.push('data3')
-    #     self.assertEqual(stack.push('data3'), 'data3')
-    #     # self.assertEqual(stack.top.next_node.data, 'data2')
-    #     # self.assertEqual(stack.top.next_node.next_node.data, 'data1')
-    #     # self.assertEqual(stack.top.next_node.next_node.next_node, None)
-    #     # self.assertEqual(stack.top.next_node.next_node.next_node.data, AttributeError)
-
-
-
-
+    def test_str(self):
+        self.stack = Stack()
+        self.assertEqual(self.stack.__str__(), "")
+        self.stack.push('data1')
+        self.stack.push('data2')
+        self.stack.push('data3')
+        self.assertEqual(self.stack.__str__(), "data3\ndata2\ndata1")
